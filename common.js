@@ -241,31 +241,6 @@ const fetch = function(url, setting) { // fetch请求的封装
 }
 
 /**
- * 设备判断：android、ios、web
- */
-const isDevice = function() { // 判断是android还是ios还是web
-  var ua = navigator.userAgent.toLowerCase()
-  if (ua.match(/iPhone\sOS/i) === 'iphone os' || ua.match(/iPad/i) === 'ipad') { // ios
-    return 'iOS'
-  }
-  if (ua.match(/Android/i) === 'android') {
-    return 'Android'
-  }
-  return 'Web'
-}
-
-/**
- * 判断是否为微信
- */
-const isWx = function() { // 判断是否为微信
-  var ua = window.navigator.userAgent.toLowerCase()
-  if (ua.match(/MicroMessenger/i) === 'micromessenger') {
-    return true
-  }
-  return false
-}
-
-/**
  * 文本复制功能
  */
 const copyTxt = function(text, fn) { // 复制功能
@@ -381,22 +356,6 @@ const checkStr = function(str, type) { // 常用正则验证，注意type大小�
     default:
       return true
   }
-}
-
-/**
- * 是否为PC端
- */
-const isPC = function() { // 是否为PC端
-  let userAgentInfo = navigator.userAgent
-  let Agents = ['Android', 'iPhone', 'SymbianOS', 'Windows Phone', 'iPad', 'iPod']
-  let flag = true
-  for (let v = 0; v < Agents.length; v++) {
-    if (userAgentInfo.indexOf(Agents[v]) > 0) {
-      flag = false
-      break
-    }
-  }
-  return flag
 }
 
 /**
@@ -852,7 +811,7 @@ String.prototype.unique = function () {
 }
 
 /**
- * 去除连续的字符串 
+ * 去除连续的字符串
  */
 
 function uniq(str) {
